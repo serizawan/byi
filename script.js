@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (currentPage > 1) {
             currentPage--;
             loadImages(currentPage);
+            prevButton.focus();
         }
     });
 
@@ -44,12 +45,14 @@ document.addEventListener("DOMContentLoaded", function() {
         if (currentPage * imagesPerPage < totalImages) {
             currentPage++;
             loadImages(currentPage);
+            nextButton.focus();
         }
     });
 
     homeButton.addEventListener('click', function() {
         currentPage = 1;
         loadImages(currentPage);
+        homeButton.focus();
     });
 
     // Initial load
