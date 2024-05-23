@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 850px; /* Adjusted for max image size plus gaps */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: cover;
+}
