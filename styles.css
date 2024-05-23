@@ -1,10 +1,5 @@
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+.gallery-container {
+    text-align: center;
 }
 
 .gallery {
@@ -14,6 +9,7 @@ body {
     width: 850px; /* Adjusted for max image size plus gaps */
     padding: 10px;
     box-sizing: border-box;
+    margin-bottom: 10px;
 }
 
 .gallery img {
@@ -22,4 +18,21 @@ body {
     max-width: 200px;
     max-height: 200px;
     object-fit: cover;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.pagination button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.pagination button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
 }
