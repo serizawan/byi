@@ -1,15 +1,34 @@
-.gallery-container {
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Changed from center to flex-start to allow scrolling if needed */
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding-top: 20px; /* Add padding to ensure the banner is not cropped */
     text-align: center;
+}
+
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.banner {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
 }
 
 .gallery {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    width: 850px; /* Adjusted for max image size plus gaps */
     padding: 10px;
     box-sizing: border-box;
-    margin-bottom: 10px;
 }
 
 .gallery img {
@@ -24,6 +43,7 @@
     display: flex;
     justify-content: center;
     gap: 10px;
+    margin-top: 10px;
 }
 
 .pagination button {

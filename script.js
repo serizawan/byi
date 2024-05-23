@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const gallery = document.getElementById('gallery');
     const prevButton = document.getElementById('prev');
     const nextButton = document.getElementById('next');
+    const homeButton = document.getElementById('home');
     const totalImages = 63;
     const imagesPerPage = 20;
     let currentPage = 1;
@@ -36,6 +37,11 @@ document.addEventListener("DOMContentLoaded", function() {
             currentPage++;
             loadImages(currentPage);
         }
+    });
+
+    homeButton.addEventListener('click', function() {
+        currentPage = 1;
+        loadImages(currentPage);
     });
 
     loadImages(currentPage);
