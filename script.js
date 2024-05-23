@@ -7,6 +7,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const imagesPerPage = 20;
     let currentPage = 1;
 
+    // Create an audio element for the sound effect
+    const woofSound = new Audio('woof.mp3');
+
     function loadImages(page) {
         gallery.innerHTML = '';
         const start = (page - 1) * imagesPerPage + 1;
@@ -37,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (currentPage > 1) {
             currentPage--;
             loadImages(currentPage);
+            woofSound.play();
             prevButton.focus();
         }
     });
@@ -45,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (currentPage * imagesPerPage < totalImages) {
             currentPage++;
             loadImages(currentPage);
+            woofSound.play();
             nextButton.focus();
         }
     });
