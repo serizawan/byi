@@ -6,7 +6,7 @@ body {
     flex-direction: column;
     background: linear-gradient(-45deg, #e0f2fe, #075985);
     min-height: 100vh;
-    margin: 0;
+    margin: 0 0 100px 0;
     padding-top: 20px;
     text-align: center;
 }
@@ -71,7 +71,7 @@ body {
     font-size: 16px;
     cursor: pointer;
     border: none;
-    background-color: #007BFF;
+    background-color: #38bdf8;
     color: white;
     border-radius: 5px;
     transition: background-color 0.3s;
@@ -84,9 +84,9 @@ body {
 }
 
 .pagination button:not(:disabled):hover {
-    background-color: #0056b3;
+    background-color: #38bdf8;
 }
 
 .pagination button:focus {
-    outline: 3px solid #0056b3;
+    outline: 3px solid #bae6fd;
 }
