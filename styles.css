@@ -4,7 +4,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: linear-gradient(-45deg,#e0f2fe, #075985);
+    background: linear-gradient(-45deg, #e0f2fe, #075985);
     min-height: 100vh;
     margin: 0;
     padding-top: 20px;
@@ -35,30 +35,28 @@ body {
     box-sizing: border-box;
 }
 
-.gallery img {
-    width: 100%;
-    height: auto;
-    max-width: 200px;
-    max-height: 200px;
-    object-fit: cover;
-    transition: transform 0.2s;
-}
-
 .gallery a {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;  /* Fixed width for each card */
+    height: 200px; /* Fixed height for each card */
+    background-color: #0c4a6e; /* Background color for each card */
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
+.gallery img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ensure image fits within the card */
+}
+
 .gallery a:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-.gallery img:hover {
-    transform: scale(1.05);
 }
 
 .pagination {
