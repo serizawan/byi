@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Picture Gallery</title>
+    <title>Photo Gallery</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="deps/lightbox.css">
 </head>
 <body>
-    <div class="gallery-container">
-        <img src="pictures/banner.png" alt="Banner" class="banner">
-        <div class="gallery" id="gallery">
-            <!-- Images will be inserted here by JavaScript -->
-        </div>
-        <div class="pagination">
-            <button id="prev" disabled>&laquo; Prev</button>
-            <button id="home">Home</button>
-            <button id="next">Next &raquo;</button>
-        </div>
+    <img src="pictures/banner.png" alt="Banner" class="banner">
+    <div id="gallery" class="gallery"></div>
+    <div id="controls">
+        <button id="home">Home</button>
+        <button id="prev">Previous</button>
+        <button id="next">Next</button>
     </div>
+    <script src="deps/lightbox-plus-jquery.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

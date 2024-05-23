@@ -15,10 +15,18 @@ document.addEventListener("DOMContentLoaded", function() {
         for (let i = start; i <= end; i++) {
             const paddedNumber = String(i).padStart(2, '0');
             const imageName = `CatsDogs_000${paddedNumber}.jpg`;
+
+            const linkElement = document.createElement('a');
+            linkElement.href = `pictures/${imageName}`;
+            linkElement.dataset.lightbox = 'gallery';
+            linkElement.dataset.title = `Image ${paddedNumber}`;
+
             const imgElement = document.createElement('img');
             imgElement.src = `pictures/${imageName}`;
             imgElement.alt = `Image ${paddedNumber}`;
-            gallery.appendChild(imgElement);
+
+            linkElement.appendChild(imgElement);
+            gallery.appendChild(linkElement);
         }
 
         prevButton.disabled = page === 1;
