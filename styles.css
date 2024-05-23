@@ -4,6 +4,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background: linear-gradient(-45deg,#e0f2fe, #075985);
     min-height: 100vh;
     margin: 0;
     padding-top: 20px;
