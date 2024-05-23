@@ -9,6 +9,29 @@ body {
     margin: 0 0 100px 0;
     padding-top: 20px;
     text-align: center;
+    color: #0c4a6e; /* Improved color contrast */
+}
+
+.loader {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.banner-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Align all images at the bottom */
+    margin-bottom: 20px;
+}
+
+.banner, .banner-dog, .banner-cat {
+    height: 235.125px; /* Decrease the height by 5% (247.5px * 0.95) */
+    width: auto; /* Maintain aspect ratio */
+    margin: 0 10px; /* Add horizontal margin between the banner and gifs */
 }
 
 .gallery-container {
@@ -17,15 +40,6 @@ body {
     align-items: center;
     width: 100%;
     max-width: 1200px; /* Set a maximum width for better layout control */
-}
-
-.banner {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .gallery {
@@ -85,7 +99,7 @@ body {
 }
 
 .pagination button:not(:disabled):hover {
-    background-color: #38bdf8;
+    background-color: #0284c7; /* Improved hover color */
 }
 
 .pagination button:focus {

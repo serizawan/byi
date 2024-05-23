@@ -5,10 +5,12 @@ document.addEventListener("DOMContentLoaded", function() {
     const homeButton = document.getElementById('home');
     const totalImages = 63;
     const imagesPerPage = 20;
+    const totalPages = Math.ceil(totalImages / imagesPerPage);
     let currentPage = 1;
 
-    // Create an audio element for the sound effect
-    const woofSound = new Audio('woof.mp3');
+    // Create audio elements for the sound effects
+    const woofSound = new Audio('assets/woof.mp3');
+    const meowSound = new Audio('assets/meow.mp3');
 
     function loadImages(page) {
         gallery.innerHTML = '';
@@ -20,33 +22,34 @@ document.addEventListener("DOMContentLoaded", function() {
             const imageName = `CatsDogs_000${paddedNumber}.jpg`;
 
             const linkElement = document.createElement('a');
-            linkElement.href = `pictures/${imageName}`;
+            linkElement.href = `assets/${imageName}`;
             linkElement.dataset.lightbox = 'gallery';
             linkElement.dataset.title = `Image ${paddedNumber}`;
 
             const imgElement = document.createElement('img');
-            imgElement.src = `pictures/${imageName}`;
+            imgElement.src = `assets/${imageName}`;
             imgElement.alt = `Image ${paddedNumber}`;
+            imgElement.onerror = () => { imgElement.src = 'assets/placeholder.jpg'; };
 
             linkElement.appendChild(imgElement);
             gallery.appendChild(linkElement);
         }
 
         prevButton.disabled = page === 1;
-        nextButton.disabled = end === totalImages;
+        nextButton.disabled = page === totalPages;
     }
 
     prevButton.addEventListener('click', function() {
         if (currentPage > 1) {
             currentPage--;
             loadImages(currentPage);
-            woofSound.play();
+            meowSound.play();
             prevButton.focus();
         }
     });
 
     nextButton.addEventListener('click', function() {
-        if (currentPage * imagesPerPage < totalImages) {
+        if (currentPage < totalPages) {
             currentPage++;
             loadImages(currentPage);
             woofSound.play();
