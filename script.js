@@ -52,5 +52,6 @@ document.addEventListener("DOMContentLoaded", function() {
         loadImages(currentPage);
     });
 
+    // Initial load
     loadImages(currentPage);
 });
